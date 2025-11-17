@@ -2,6 +2,11 @@ import { carDealers, realEstate } from '../../data/businesses'; // Adjusted impo
 import { StarIcon, BuildingOffice2Icon, RocketLaunchIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
+// Helper function to generate slug from business name
+function generateSlug(name: string): string {
+  return name.toLowerCase().replace(/\s+/g, '-');
+}
+
 export default function BusinessesPage() {
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -50,8 +55,8 @@ export default function BusinessesPage() {
               <ul className="space-y-4">
                 {realEstate.map(({ en, ar }) => (
                   <li key={en}>
-                    <a 
-                      href="#" // In the future, this will link to the company's review page, e.g., `/business/${en}`
+                    <Link 
+                      href={`/businesses/${generateSlug(en)}`}
                       className="flex justify-between items-center p-4 rounded-md hover:bg-gray-100 transition-colors duration-200 group"
                     >
                       <span className="text-lg font-bold text-gray-800 group-hover:text-blue-600">{ar}</span>
@@ -66,7 +71,7 @@ export default function BusinessesPage() {
                           <StarIcon className="h-5 w-5 text-gray-300" />
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -85,8 +90,8 @@ export default function BusinessesPage() {
               <ul className="space-y-4">
                 {carDealers.map(({ en, ar }) => (
                   <li key={en}>
-                    <a 
-                      href="#" // This will also link to a dynamic review page
+                    <Link 
+                      href={`/businesses/${generateSlug(en)}`}
                       className="flex justify-between items-center p-4 rounded-md hover:bg-gray-100 transition-colors duration-200 group"
                     >
                       <span className="text-lg font-bold text-gray-800 group-hover:text-green-600">{ar}</span>
@@ -101,7 +106,7 @@ export default function BusinessesPage() {
                           <StarIcon className="h-5 w-5" />
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

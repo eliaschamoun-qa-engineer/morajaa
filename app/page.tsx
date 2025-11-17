@@ -5,6 +5,11 @@ import { useState } from 'react';
 import { carDealers, realEstate, brokers } from '../data/businesses';
 import Link from 'next/link';
 
+// Helper function to generate slug from business name
+function generateSlug(name: string): string {
+  return name.toLowerCase().replace(/\s+/g, '-');
+}
+
 export default function Home() {
   const [search, setSearch] = useState('');
   // Combine all businesses
@@ -152,9 +157,11 @@ export default function Home() {
               <div className="col-span-3 text-gray-500 text-xl">لا توجد شركات مطابقة للبحث.</div>
             ) : (
               filtered.map((b, idx) => (
-                <div
+                <Link
                   key={b.en + idx}
-                  className="bg-white rounded-lg shadow-lg p-6 text-right transform hover:-translate-y-2 transition duration-300"
+                  href={`/businesses/${generateSlug(b.en)}`}
+                  className="bg-white rounded-lg shadow-lg p-6 text-right transform hover:-translate-y-2 hover:shadow-xl transition duration-300 block cursor-pointer"
+                  style={{ cursor: 'pointer' }}
                 >
                   <div className="flex justify-between items-center mb-4">
                     <span
@@ -192,7 +199,7 @@ export default function Home() {
                   )}
                   <h4 className="text-xl font-bold mb-2">{b.ar}</h4>
                   <p className="text-gray-600">{b.en}</p>
-                </div>
+                </Link>
               ))
             )}
           </div>

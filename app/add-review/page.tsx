@@ -1,8 +1,10 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { carDealers, realEstate, brokers } from '../../data/businesses';
 
 export default function AddReviewPage() {
+  const searchParams = useSearchParams();
   const [businessType, setBusinessType] = useState('');
   const [business, setBusiness] = useState('');
   const [review, setReview] = useState('');
@@ -10,6 +12,21 @@ export default function AddReviewPage() {
   const [contact, setContact] = useState('');
   const [files, setFiles] = useState<File[]>([]);
   const [images, setImages] = useState<File[]>([]);
+
+  // Pre-fill form from URL parameters
+  useEffect(() => {
+    if (!searchParams) return;
+    
+    const typeParam = searchParams.get('businessType');
+    const businessParam = searchParams.get('business');
+    
+    if (typeParam) {
+      setBusinessType(typeParam);
+    }
+    if (businessParam) {
+      setBusiness(decodeURIComponent(businessParam));
+    }
+  }, [searchParams]);
 
   // Get businesses by type
   const businessOptions =
