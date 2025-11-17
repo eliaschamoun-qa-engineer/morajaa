@@ -120,7 +120,7 @@ export default function BusinessDetailPage() {
       {/* Main Content */}
       <main className="container mx-auto px-6 py-8">
         {/* Business Header - Enhanced */}
-        <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl p-8 mb-8 border border-blue-100 transform hover:shadow-2xl transition-shadow duration-300">
+        <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl p-8 mb-12 border border-blue-100 transform hover:shadow-2xl transition-shadow duration-300">
           <div className="flex items-start justify-between mb-6">
             <div className="flex-1">
               <div className="flex items-center mb-4">
@@ -170,7 +170,7 @@ export default function BusinessDetailPage() {
         </div>
 
         {/* Image Swiper - Enhanced */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8 border border-gray-100">
+        <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-12 border border-gray-100">
           <div className="flex items-center mb-6">
             <div className="w-1 h-8 bg-gradient-to-b from-blue-600 to-blue-400 rounded-full me-4"></div>
             <h2 className="text-3xl font-bold text-gray-800">صور الشركة</h2>
@@ -222,7 +222,7 @@ export default function BusinessDetailPage() {
         </div>
 
         {/* Business Details - Enhanced */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* About Section - Enhanced */}
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
             <div className="flex items-center mb-6">

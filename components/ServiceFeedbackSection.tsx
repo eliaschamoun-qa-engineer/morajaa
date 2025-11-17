@@ -79,7 +79,7 @@ export default function ServiceFeedbackSection({ businessName, businessType, bus
   };
 
   return (
-    <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl p-8 mb-8 border border-blue-100">
+    <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl p-8 mb-12 border border-blue-100">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center">
           <div className="w-1 h-8 bg-gradient-to-b from-blue-600 to-blue-400 rounded-full me-4"></div>

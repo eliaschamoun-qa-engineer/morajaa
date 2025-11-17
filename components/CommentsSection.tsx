@@ -179,7 +179,7 @@ export default function CommentsSection({ businessSlug }: CommentsSectionProps) 
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 mt-6">
+    <div className="bg-white rounded-lg shadow-lg p-6 mt-12 mb-12">
       <div className="flex items-center mb-6">
         <ChatBubbleLeftRightIcon className="h-6 w-6 text-blue-600 ms-2" />
         <h2 className="text-2xl font-bold text-gray-800">التعليقات</h2>
